@@ -45,8 +45,5 @@ nav {
   select {
     width: 200px;
     padding: 5px;
-    border-radius: 25px;
-    border-radius: 25% 50%;
-    border-radius: 50px 25px 10px;
-    border-radius: 25px 0 15px 50px;
+    border-radius: 51px;
   }
