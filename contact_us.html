@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contactanos</title>
+  <link rel="stylesheet" href="./travel_recommendation.css">
+</head>
+<body>
+   <!--Barra de navegacion-->
+   <nav><h1>Dreamers</h1>
+   <ul>
+     <li><a href="./index.html" id="home">Inicio </a></li>
+     <li><a href="./about_us.html" id="aboutUs">Acerca de Nosotros </a></li>
+     <li><a href="./contact_us.html" id="contactUs">Contáctanos </a></li>
+     <li><input class="searchBox" type="text" id="srcDestiny" placeholder="Busca tu proximo destino">  </li>
+     <li><button id='btnSearch'>Buscar</button>
+     <li><button id='clrSearch'>Restablecer</button>
+     </li>   
+   </ul>
+  </nav>
+
+   <!--presentación-->
+  
+<div class="container3">
+  <div class="header">    
+    <h1 class="ttleMessage"> Contactanos </h1>
+     <p>Estas a un paso de tu proxima aventura.</p>
+  </div>
+
+  <div class="formulario">
+    <form id="contactForm">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" onclick="thankyou()">Enviar</button>
+    </form>
+  </div>
+</div>
+
+  <script src="./travel_recommendation.js"></script>
+</body>
+</html>
