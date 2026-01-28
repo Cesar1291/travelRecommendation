@@ -49,3 +49,14 @@ nav {
     padding: 5px;
     border-radius: 51px;
   }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  /* Basic CSS for the report section */
+  h2 {
+    margin-top: 30px;
+    color: #ffffff;
+    opacity: 80;
+  }
