@@ -74,8 +74,6 @@ nav {
         "content content"
         "footer footer";
     grid-template-columns: 1fr 2fr;
-    /*gap: 3px;
-    background-color: dodgerblue;*/
     padding: 5px;
     }
     .container div {
@@ -92,17 +90,50 @@ nav {
     width: 500px;
     height: 250px;
     }
-    /*.container div.menu {
-    grid-area: menu;
-    width: 60px;
-    height: 250px;
-    }*/
     .container div.content {
     grid-area: content;
     width: 500px;
-    height: 170px;
+    height: auto;;
+    padding: 30px;
     }
     .container div.footer {
+    grid-area: footer;
+    width: 500px;
+    height: 65px;
+    text-align: center;  
+    }
+
+  /* sobre nosotros */
+    .container2 {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "content content"
+        "footer footer";
+    grid-template-columns: 1fr 2fr;
+    padding: 5px;
+    }
+    .container2 div {
+    background-color: #ffffff;
+    padding: 10px;
+    opacity: 0.8;
+    position: relative;
+    top: 80px;
+    left: 20px;
+    }
+    .container2 div.header {
+    grid-area: header;
+    text-align: center;
+    width: 500px;
+    height: 150px;
+    }
+    .container2 div.content {
+    grid-area: content;
+    width: 500px;
+    height: auto;
+    padding-left: 30px;
+    }
+    .container2 div.footer {
     grid-area: footer;
     width: 500px;
     height: 65px;
@@ -115,3 +146,4 @@ nav {
     color: #ffffff;
     opacity: 80;
   }
+
