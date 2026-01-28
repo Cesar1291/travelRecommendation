@@ -109,6 +109,7 @@ nav {
     grid-template-areas:
         "header header"
         "content content"
+        "us us"
         "footer footer";
     grid-template-columns: 1fr 2fr;
     padding: 5px;
@@ -132,6 +133,13 @@ nav {
     width: 500px;
     height: auto;
     padding-left: 30px;
+    }
+    .container2 div.us {
+    grid-area: us;
+    width: 500px;
+    height: auto;
+    padding-left: 30px;
+    text-align: center;
     }
     .container2 div.footer {
     grid-area: footer;
