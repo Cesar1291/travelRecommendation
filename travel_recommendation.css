@@ -28,3 +28,14 @@ nav {
     color: #ffffff;
     font-weight: bold;
   }
+  
+  /* Basic CSS for the form elements */
+  body {
+    font-family: Arial, sans-serif;
+    /* margin: 20px; */
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
