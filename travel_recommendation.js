@@ -1,4 +1,12 @@
 const btnSearch = document.getElementById('btnSearch');
+const clrSearch = document.getElementById('clrSearch');
+
+function resetForm() {
+    document.getElementById("srcDestiny").value = "";
+    document.getElementById('divDestino').innerHTML = '';
+    document.getElementById('divDisplay').innerHTML = '';
+}    
+clrSearch.addEventListener("click", resetForm);     
 
 function searchDestiny() {
         const input = document.getElementById('srcDestiny').value.toLowerCase();
@@ -7,7 +15,7 @@ function searchDestiny() {
         destinoDiv.innerHTML = '';
         displayDiv.innerHTML = '';
 
-        fetch('./travel_recommendation_api.json') 
+        fetch('./recommendation_api.json')
           .then(response => response.json())
           .then(data => {
             const countries = data.countries.find(item => item.name.toLowerCase() === input);
