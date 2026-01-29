@@ -25,8 +25,8 @@ function searchDestiny() {
               const description = countries.description;
               destinoDiv.innerHTML += `<h2>${countries.name}</h2>`;
               destinoDiv.innerHTML += `<img src="${countries.imagesrc}" alt="hjh">`;
-              displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades}</p>`; 
-              displayDiv.innerHTML += `<p><strong>Descripción:</strong> ${description}</p>`;
+              //displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades}</p>`; 
+              //displayDiv.innerHTML += `<p><strong>Descripción:</strong> ${description}</p>`;
               
             } else {
               displayDiv.innerHTML = 'Destino no encontrado';
