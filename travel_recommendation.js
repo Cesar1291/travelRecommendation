@@ -15,7 +15,7 @@ function searchDestiny() {
         destinoDiv.innerHTML = '';
         displayDiv.innerHTML = '';
 
-        fetch('./recommendation_api.json')
+        fetch('./travel_recommendation_api.json')
           .then(response => response.json())
           .then(data => {
             const countries = data.countries.find(item => item.name.toLowerCase() === input);
