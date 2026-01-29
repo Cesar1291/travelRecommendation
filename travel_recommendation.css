@@ -36,7 +36,8 @@ nav {
     background-color: #F2F2F2;
     background-repeat: no-repeat;
     background-size: cover;
-    width:100%;
+    /*width:100%;
+    background-position: center center; */
   }  
   
   h1 {
@@ -67,44 +68,88 @@ nav {
   div {
     margin-bottom: 10px;
   }
-    .container {
+    .container{
+    display: grid;
+    grid-template-areas:
+        "display desteny";
+    grid-template-columns: 1fr 2fr;
+    padding: 80px;
+    gap: 25px;
+    }
+    .container div {
+    /*background-color: red;*/
+    padding: 10px;
+    opacity: 0.8;
+    position: relative;
+    /*top: 20px;*/
+    /*left: 20px;*/
+    }
+    .container div.display {
     display: grid;
     grid-template-areas:
         "header header"
         "content content"
         "footer footer";
     grid-template-columns: 1fr 2fr;
-    padding: 5px;
+    padding: 25px;
     }
-    .container div {
+    .container div.display div {
     background-color: #ffffff;
     padding: 10px;
     opacity: 0.8;
     position: relative;
-    top: 80px;
-    left: 20px;
+    /*top: 20px;*/
+    /*left: 20px;*/
     }
-    .container div.header {
+    .container div.display div.header {
     grid-area: header;
     text-align: center;
     width: 500px;
     height: 250px;
     }
-    .container div.content {
+    .container div.display div.content {
     grid-area: content;
     width: 500px;
     height: auto;;
     padding: 30px;
     }
-    .container div.footer {
+    .container div.display div.footer {
     grid-area: footer;
     width: 500px;
     height: 65px;
     text-align: center;  
     }
+    .container div.desteny {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "content content";
+    grid-template-columns: 1fr 2fr;
+    padding: 25px;
+    }
+    .container div.desteny div {
+    background-color: #ffffff;
+    padding: 10px;
+    opacity: 0.8;
+    position: relative;
+    /*top: 20px;*/
+    /*left: 20px;*/
+    }
+    .container div.desteny div.header {
+    grid-area: header;
+    text-align: center;
+    width: auto;
+    height: auto;
+    }
+    .container div.desteny div.content {
+    grid-area: content;
+    width: auto;
+    height: auto;;
+    padding: 30px;
+    }
 
   /* sobre nosotros */
-    .container2 {
+  /*  .container2 {
     display: grid;
     grid-template-areas:
         "header header"
@@ -149,7 +194,7 @@ nav {
     }
 
   /* Contactanos */
-    .container3 {
+  /*  .container3 {
     display: grid;
     grid-template-areas:
         "header header"
