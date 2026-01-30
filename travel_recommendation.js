@@ -18,18 +18,17 @@ function searchDestiny() {
     fetch('travel_recommendation_api.json')
       .then(response => response.json())
       .then(data => {
-            console.log(data);
+            //console.log(data);
             const countries = data.countries.find(item => item.name.toLowerCase() === input);
-            console.log(countries);
+            //console.log(countries);
             if (countries) { 
               const Ciudades = countries.cities;
-              console.log(Ciudades);
-              var nameCiudad = Ciudades.name.join(', ');
-              var descripcion = Ciudades.descripcion.join(', '); 
-              const Ciudades = countries.cities; 
+              console.log(countries.name);
+              var nameCiudad = Ciudades.name;
+              //var descripcion = Ciudades.descripcion; 
               destinoDiv.innerHTML += `<h1>${countries.name}</h1>`;
               displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades.name}</p>`; 
-              displayDiv.innerHTML += `<p><strong>Descripción:</strong> ${Ciudades.description}</p>`;    
+              //displayDiv.innerHTML += `<p><strong>Descripción:</strong> ${descripcion}</p>`;    
               displayDiv.innerHTML += `<img src="${Ciudades.imagesrc}" alt="imagen-no-encontrada">`;          
             } else {
               //displayDiv.innerHTML = 'Destino no encontrado';
