@@ -14,24 +14,23 @@ function searchDestiny() {
     const displayDiv = document.getElementById('divDisplay');
     destinoDiv.innerHTML = '';
     displayDiv.innerHTML = ''; 
+    destinoDiv.style.opacity = 1;
+    displayDiv.style.opacity = 1;
 
     fetch('travel_recommendation_api.json')
       .then(response => response.json())
       .then(data => {
-            //console.log(data);
             const countries = data.countries.find(item => item.name.toLowerCase() === input);
-            //console.log(countries);
             if (countries) { 
               const Ciudades = countries.cities;
-              console.log(countries.name);
-              var nameCiudad = Ciudades.name;
-              //var descripcion = Ciudades.descripcion; 
-              destinoDiv.innerHTML += `<h1>${countries.name}</h1>`;
-              displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades.name}</p>`; 
-              //displayDiv.innerHTML += `<p><strong>Descripción:</strong> ${descripcion}</p>`;    
-              displayDiv.innerHTML += `<img src="${Ciudades.imagesrc}" alt="imagen-no-encontrada">`;          
+              destinoDiv.innerHTML += `<h1 class="ttleMessage">${countries.name}</h1>`;
+              for(var i=0; i<Ciudades.length; i++){
+                displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades[i].name}</p>`; 
+                displayDiv.innerHTML += `<p><strong>Descripción:</strong>${Ciudades[i].description}</p>`;    
+                displayDiv.innerHTML += `<img src="${Ciudades[i].imageUrl}" width=50% height=auto alt="imagen-no-encontrada"><br><br>`; 
+              }   
             } else {
-              //displayDiv.innerHTML = 'Destino no encontrado';
+              displayDiv.innerHTML = 'Destino no encontrado';
             }
     })
     .catch(error => {
