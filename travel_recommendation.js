@@ -45,17 +45,27 @@ function searchDestiny() {
                 for(var i=0;i<countries.length;i++){
                     const Ciudades = countries[i].cities;
                       //displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${countries.name}</p>`; 
-                      displayDiv.innerHTML += `<p><strong>Pais::</strong> ${countries[i].name}</p>`; 
+                    displayDiv.innerHTML += `<p><strong>Pais::</strong> ${countries[i].name}</p>`; 
                     for(var j=0; j<Ciudades.length; j++){
-                      displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades[j].name}</p>`; 
+                      displayDiv.innerHTML += `<p><strong>Ciudad:</strong> ${Ciudades[j].name}</p>`; 
                       displayDiv.innerHTML += `<p><strong>Descripción:</strong>${Ciudades[j].description}</p>`;    
                       displayDiv.innerHTML += `<img src="${Ciudades[j].imageUrl}" width=50% height=auto alt="imagen-no-encontrada"><br><br>`; 
                     }
                 }
               }else if (opcionId===1){
-                  displayDiv.innerHTML += `<p>Trabajando en tus destinos</p>`;   
+                  const temples = data.temples;
+                  for(var j=0; j<temples.length; j++){
+                    displayDiv.innerHTML += `<p><strong>Templo:</strong> ${temples[j].name}</p>`; 
+                    displayDiv.innerHTML += `<p><strong>Descripción:</strong>${temples[j].description}</p>`;    
+                    displayDiv.innerHTML += `<img src="${temples[j].imageUrl}" width=50% height=auto alt="imagen-no-encontrada"><br><br>`; 
+                  }
               }else if (opcionId===2){
-                  displayDiv.innerHTML += `<p>Trabajando en tus destinos</p>`;   
+                  const beaches = data.beaches;
+                  for(var j=0; j<beaches.length; j++){
+                    displayDiv.innerHTML += `<p><strong>Playa:</strong> ${beaches[j].name}</p>`; 
+                    displayDiv.innerHTML += `<p><strong>Descripción:</strong>${beaches[j].description}</p>`;    
+                    displayDiv.innerHTML += `<img src="${beaches[j].imageUrl}" width=50% height=auto alt="imagen-no-encontrada"><br><br>`; 
+                  }   
               } else {
                 displayDiv.innerHTML = 'Destino no encontrado';
               }
@@ -64,5 +74,6 @@ function searchDestiny() {
       console.error('Error:', error);
       displayDiv.innerHTML = 'A ocurrido un error al recuperar el destino';
     });
+    document.getElementById("srcDestiny").value = "";
  }
  btnSearch.addEventListener('click', searchDestiny);
