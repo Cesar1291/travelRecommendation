@@ -149,7 +149,7 @@ nav {
     }
 
   /* sobre nosotros */
-  /*  .container2 {
+  .container2 {
     display: grid;
     grid-template-areas:
         "header header"
@@ -194,7 +194,7 @@ nav {
     }
 
   /* Contactanos */
-  /*  .container3 {
+    .container3 {
     display: grid;
     grid-template-areas:
         "header header"

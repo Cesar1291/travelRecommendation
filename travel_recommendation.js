@@ -9,33 +9,33 @@ function resetForm() {
 clrSearch.addEventListener("click", resetForm);     
 
 function searchDestiny() {
-        const input = document.getElementById('srcDestiny').value.toLowerCase();
-        const destinoDiv = document.getElementById('divDestino');
-        const displayDiv = document.getElementById('divDisplay');
-        destinoDiv.innerHTML = '';
-        displayDiv.innerHTML = '';
+    const input = document.getElementById('srcDestiny').value.toLowerCase();
+    const destinoDiv = document.getElementById('divDestino');
+    const displayDiv = document.getElementById('divDisplay');
+    destinoDiv.innerHTML = '';
+    displayDiv.innerHTML = ''; 
 
-        fetch('./travel_recommendation_api.json')
-          .then(response => response.json())
-          .then(data => {
+    fetch('travel_recommendation_api.json')
+      .then(response => response.json())
+      .then(data => {
+            //console.log(data);
             const countries = data.countries.find(item => item.name.toLowerCase() === input);
-
+            //console.log(countries);
             if (countries) { 
-              const Ciudades = countries.symptoms.join(', '); 
+              //console.log(countries.description);
+              const Ciudades = countries.cities.join(', '); 
               const description = countries.description;
               destinoDiv.innerHTML += `<h2>${countries.name}</h2>`;
               destinoDiv.innerHTML += `<img src="${countries.imagesrc}" alt="hjh">`;
-              //displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades}</p>`; 
-              //displayDiv.innerHTML += `<p><strong>Descripción:</strong> ${description}</p>`;
-              
+              displayDiv.innerHTML += `<p><strong>Ciudad::</strong> ${Ciudades}</p>`; 
+              displayDiv.innerHTML += `<p><strong>Descripción:</strong> ${description}</p>`;              
             } else {
-              displayDiv.innerHTML = 'Destino no encontrado';
+              //displayDiv.innerHTML = 'Destino no encontrado';
             }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            displayDiv.innerHTML = 'A ocurrido un error al recuperar el destino';
-          });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      displayDiv.innerHTML = 'A ocurrido un error al recuperar el destino';
+    });
  }
-
-      btnSearch.addEventListener('click', searchDestiny);
+ btnSearch.addEventListener('click', searchDestiny);
